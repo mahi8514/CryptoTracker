@@ -42,10 +42,15 @@ extension HomeView {
         Section {
             HStack {
                 Spacer()
-                Text("$ 55")
-                    .font(.largeTitle)
+                VStack(alignment: .center, spacing: 16) {
+                    Text("Bitcoin exchange rate in USD")
+                        .font(.title2)
+                    Text(viewModel.exchangeRate)
+                        .font(.largeTitle)
+                }
                 Spacer()
             }
+            .padding(.vertical)
         }
     }
 }
@@ -77,6 +82,7 @@ extension HomeView {
             Spacer()
             Button("UPDATE") {
                 focusedField = nil
+                viewModel.proceedAction.send()
             }
             .font(.headline)
             .foregroundColor(.white)
@@ -91,6 +97,6 @@ extension HomeView {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel())
+        HomeView(viewModel: HomeViewModel(bitcoinService: DefaultBitcoinService()))
     }
 }

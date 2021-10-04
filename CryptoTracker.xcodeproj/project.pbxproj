@@ -15,6 +15,19 @@
 		14306129270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306128270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift */; };
 		14306137270B4B5100209D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306135270B4B5100209D24 /* HomeView.swift */; };
 		14306138270B4B5100209D24 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306136270B4B5100209D24 /* HomeViewModel.swift */; };
+		1430613F270B526200209D24 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430613A270B526200209D24 /* Session.swift */; };
+		14306140270B526200209D24 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430613B270B526200209D24 /* Service.swift */; };
+		14306141270B526200209D24 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430613C270B526200209D24 /* Enums.swift */; };
+		14306142270B526200209D24 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430613D270B526200209D24 /* Provider.swift */; };
+		14306143270B526200209D24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430613E270B526200209D24 /* Extensions.swift */; };
+		14306147270B548D00209D24 /* BitcoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306146270B548D00209D24 /* BitcoinResponse.swift */; };
+		1430614A270B56F500209D24 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306149270B56F500209D24 /* BitcoinService.swift */; };
+		1430614D270B59E300209D24 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430614C270B59E300209D24 /* CurrencyManager.swift */; };
+		14306150270B5A7400209D24 /* DatatypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430614F270B5A7400209D24 /* DatatypeExtension.swift */; };
+		14306155270B60E300209D24 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306154270B60E300209D24 /* NotificationManager.swift */; };
+		14306159270B640700209D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306158270B640700209D24 /* AppDelegate.swift */; };
+		1430615C270B688500209D24 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430615B270B688500209D24 /* UserDefault.swift */; };
+		1430615E270B77C000209D24 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430615D270B77C000209D24 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +59,20 @@
 		14306128270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14306135270B4B5100209D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		14306136270B4B5100209D24 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1430613A270B526200209D24 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		1430613B270B526200209D24 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1430613C270B526200209D24 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		1430613D270B526200209D24 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		1430613E270B526200209D24 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		14306146270B548D00209D24 /* BitcoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinResponse.swift; sourceTree = "<group>"; };
+		14306149270B56F500209D24 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
+		1430614C270B59E300209D24 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
+		1430614F270B5A7400209D24 /* DatatypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatatypeExtension.swift; sourceTree = "<group>"; };
+		14306154270B60E300209D24 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		14306156270B627D00209D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		14306158270B640700209D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1430615B270B688500209D24 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		1430615D270B77C000209D24 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +123,14 @@
 		1430610A270B4B2200209D24 /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
-				1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */,
-				14306135270B4B5100209D24 /* HomeView.swift */,
-				14306136270B4B5100209D24 /* HomeViewModel.swift */,
+				14306156270B627D00209D24 /* Info.plist */,
+				14306157270B63F200209D24 /* Application */,
+				14306151270B609D00209D24 /* Module */,
+				1430615A270B683000209D24 /* Utility */,
+				1430614B270B59A900209D24 /* Managers */,
+				14306148270B564700209D24 /* Service */,
+				1430614E270B5A4000209D24 /* Extensions */,
+				14306144270B544900209D24 /* Data */,
 				1430610F270B4B2300209D24 /* Assets.xcassets */,
 				14306111270B4B2300209D24 /* Preview Content */,
 			);
@@ -128,6 +160,95 @@
 				14306128270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift */,
 			);
 			path = CryptoTrackerUITests;
+			sourceTree = "<group>";
+		};
+		14306139270B526200209D24 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1430613A270B526200209D24 /* Session.swift */,
+				1430613B270B526200209D24 /* Service.swift */,
+				1430613C270B526200209D24 /* Enums.swift */,
+				1430613D270B526200209D24 /* Provider.swift */,
+				1430613E270B526200209D24 /* Extensions.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		14306144270B544900209D24 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				14306145270B545000209D24 /* Entities */,
+				14306139270B526200209D24 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		14306145270B545000209D24 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				14306146270B548D00209D24 /* BitcoinResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		14306148270B564700209D24 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				14306149270B56F500209D24 /* BitcoinService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1430614B270B59A900209D24 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1430614C270B59E300209D24 /* CurrencyManager.swift */,
+				1430615D270B77C000209D24 /* DataManager.swift */,
+				14306154270B60E300209D24 /* NotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1430614E270B5A4000209D24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1430614F270B5A7400209D24 /* DatatypeExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		14306151270B609D00209D24 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				14306152270B60B000209D24 /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		14306152270B60B000209D24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14306135270B4B5100209D24 /* HomeView.swift */,
+				14306136270B4B5100209D24 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		14306157270B63F200209D24 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */,
+				14306158270B640700209D24 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1430615A270B683000209D24 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1430615B270B688500209D24 /* UserDefault.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +381,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1430613F270B526200209D24 /* Session.swift in Sources */,
+				1430615E270B77C000209D24 /* DataManager.swift in Sources */,
+				14306147270B548D00209D24 /* BitcoinResponse.swift in Sources */,
+				1430615C270B688500209D24 /* UserDefault.swift in Sources */,
 				1430610C270B4B2200209D24 /* CryptoTrackerApp.swift in Sources */,
+				14306150270B5A7400209D24 /* DatatypeExtension.swift in Sources */,
+				14306159270B640700209D24 /* AppDelegate.swift in Sources */,
+				14306142270B526200209D24 /* Provider.swift in Sources */,
+				14306143270B526200209D24 /* Extensions.swift in Sources */,
+				14306155270B60E300209D24 /* NotificationManager.swift in Sources */,
+				14306140270B526200209D24 /* Service.swift in Sources */,
+				1430614A270B56F500209D24 /* BitcoinService.swift in Sources */,
+				1430614D270B59E300209D24 /* CurrencyManager.swift in Sources */,
 				14306138270B4B5100209D24 /* HomeViewModel.swift in Sources */,
+				14306141270B526200209D24 /* Enums.swift in Sources */,
 				14306137270B4B5100209D24 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +560,7 @@
 				DEVELOPMENT_TEAM = AW7UK4LE9Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,6 +591,7 @@
 				DEVELOPMENT_TEAM = AW7UK4LE9Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
