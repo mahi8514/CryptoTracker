@@ -51,12 +51,8 @@ class HomeViewModel: ViewModel {
         
         proceedAction.sink { [weak self] in
             guard let self = self else { return }
-            if let minimumRate = Double(self.minimalAcceptableRate) {
-                UserDefaultConfig.minimumAcceptableRate = minimumRate
-            }
-            if let maximumRate = Double(self.maximalAcceptableRate) {
-                UserDefaultConfig.maximumAcceptableRate = maximumRate
-            }
+            UserDefaultConfig.minimumAcceptableRate = Double(self.minimalAcceptableRate) ?? nil
+            UserDefaultConfig.maximumAcceptableRate = Double(self.maximalAcceptableRate) ?? nil
         }
         .store(in: &cancelBag)
         
