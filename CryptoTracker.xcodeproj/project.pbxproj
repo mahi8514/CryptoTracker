@@ -28,6 +28,7 @@
 		14306159270B640700209D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306158270B640700209D24 /* AppDelegate.swift */; };
 		1430615C270B688500209D24 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430615B270B688500209D24 /* UserDefault.swift */; };
 		1430615E270B77C000209D24 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430615D270B77C000209D24 /* DataManager.swift */; };
+		14306160270B857600209D24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430615F270B857600209D24 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		14306158270B640700209D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1430615B270B688500209D24 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		1430615D270B77C000209D24 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1430615F270B857600209D24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				1430615B270B688500209D24 /* UserDefault.swift */,
+				1430615F270B857600209D24 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1430613F270B526200209D24 /* Session.swift in Sources */,
+				14306160270B857600209D24 /* Constants.swift in Sources */,
 				1430615E270B77C000209D24 /* DataManager.swift in Sources */,
 				14306147270B548D00209D24 /* BitcoinResponse.swift in Sources */,
 				1430615C270B688500209D24 /* UserDefault.swift in Sources */,

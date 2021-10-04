@@ -15,6 +15,9 @@ struct CryptoTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(viewModel: HomeViewModel(bitcoinService: DefaultBitcoinService()))
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                    appDelegate.scheduleAppRefresh()
+                }
         }
     }
 }

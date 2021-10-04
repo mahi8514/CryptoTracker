@@ -23,8 +23,6 @@ final class CryptoProvider: ProviderProtocol {
     private init() { self.session = URLSession.shared }
     
     func request<T>(service: CryptoService) -> AnyPublisher<T, NetworkError> where T : Decodable, T : Encodable {
-        let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = TimeInterval(requestTimeOut)
         guard let request = URLRequest(service: service) else { return Fail<T, NetworkError>(error: .badURL).eraseToAnyPublisher() }
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase

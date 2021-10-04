@@ -58,7 +58,7 @@ class HomeViewModel: ViewModel {
         
         let timer = Timer.TimerPublisher(interval: 5.0, runLoop: .main, mode: .default)
         _ = timer.connect()
-        
+
         timer.map { _ in () }
             .map { [weak self] _ -> Future<Result<BitcoinResponse, NetworkError>, Never> in
                 guard let self = self else { return Future { $0(.success(.failure(.unknown))) } }

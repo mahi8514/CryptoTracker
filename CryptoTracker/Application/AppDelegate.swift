@@ -7,11 +7,60 @@
 
 import Foundation
 import UIKit
+import BackgroundTasks
+import Combine
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    
+    var cancelBag = Set<AnyCancellable>()
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         registerForNotification()
+        
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.backgroundRefreshTaskId, using: nil) { task in
+            self.handleAppRefresh(task: task as! BGAppRefreshTask)
+        }
+        
+        
         return true
+    }
+    
+    func scheduleAppRefresh() {
+        let request = BGAppRefreshTaskRequest(identifier: Constants.backgroundRefreshTaskId)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 5)
+        do {
+            try BGTaskScheduler.shared.submit(request)
+        } catch {
+            print("Could not schedule app refresh task \(error.localizedDescription)")
+        }
+    }
+    
+    func handleAppRefresh(task: BGAppRefreshTask) {
+        scheduleAppRefresh()
+        
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        
+        let operation = BlockOperation {
+            DefaultBitcoinService().exchangeRate()
+                .sink(receiveValue: { result in
+                    switch result {
+                    case .success(let response): print(response)
+                    case .failure(let error): print(error)
+                    }
+                })
+                .store(in: &self.cancelBag)
+        }
+        
+        task.expirationHandler = {
+            queue.cancelAllOperations()
+        }
+        
+        operation.completionBlock = {
+            task.setTaskCompleted(success: !operation.isCancelled)
+        }
+        
+        queue.addOperations([operation], waitUntilFinished: false)
     }
     
     func registerForNotification() {
@@ -30,6 +79,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Notification received with identifier \(notification.request.identifier)")
-        completionHandler([.banner, .sound])
+        completionHandler([.badge, .sound, .banner])
     }
 }
