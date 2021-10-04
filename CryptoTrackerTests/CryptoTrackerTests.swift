@@ -17,17 +17,28 @@ class CryptoTrackerTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testCurrencyFormatterDollarSymbol() throws {
+        let amount = CurrencyManager.shared.usdCurrency(amount: 234)
+        let symbolContaines = amount.contains { $0 == "$" }
+        XCTAssert(symbolContaines)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testMinimumAndMaximumValueIsSynced() throws {
+        if UserDefaultConfig.minimumAcceptableRate != nil {
+            XCTAssertNotNil(UserDefaultConfig.maximumAcceptableRate)
+        }
+        if UserDefaultConfig.maximumAcceptableRate != nil {
+            XCTAssertNotNil(UserDefaultConfig.minimumAcceptableRate)
+        }
+        if UserDefaultConfig.minimumAcceptableRate == nil {
+            XCTAssertNil(UserDefaultConfig.maximumAcceptableRate)
+        }
+        if UserDefaultConfig.maximumAcceptableRate == nil {
+            XCTAssertNil(UserDefaultConfig.minimumAcceptableRate)
         }
     }
+    
+    
 
 }
