@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1430610C270B4B2200209D24 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */; };
-		1430610E270B4B2200209D24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430610D270B4B2200209D24 /* ContentView.swift */; };
 		14306110270B4B2300209D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1430610F270B4B2300209D24 /* Assets.xcassets */; };
 		14306113270B4B2300209D24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14306112270B4B2300209D24 /* Preview Assets.xcassets */; };
 		1430611D270B4B2300209D24 /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430611C270B4B2300209D24 /* CryptoTrackerTests.swift */; };
 		14306127270B4B2300209D24 /* CryptoTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306126270B4B2300209D24 /* CryptoTrackerUITests.swift */; };
 		14306129270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306128270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift */; };
+		14306137270B4B5100209D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306135270B4B5100209D24 /* HomeView.swift */; };
+		14306138270B4B5100209D24 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14306136270B4B5100209D24 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		14306108270B4B2200209D24 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
-		1430610D270B4B2200209D24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1430610F270B4B2300209D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14306112270B4B2300209D24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		14306118270B4B2300209D24 /* CryptoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		14306122270B4B2300209D24 /* CryptoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14306126270B4B2300209D24 /* CryptoTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITests.swift; sourceTree = "<group>"; };
 		14306128270B4B2300209D24 /* CryptoTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14306135270B4B5100209D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14306136270B4B5100209D24 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */,
-				1430610D270B4B2200209D24 /* ContentView.swift */,
+				14306135270B4B5100209D24 /* HomeView.swift */,
+				14306136270B4B5100209D24 /* HomeViewModel.swift */,
 				1430610F270B4B2300209D24 /* Assets.xcassets */,
 				14306111270B4B2300209D24 /* Preview Content */,
 			);
@@ -257,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1430610E270B4B2200209D24 /* ContentView.swift in Sources */,
 				1430610C270B4B2200209D24 /* CryptoTrackerApp.swift in Sources */,
+				14306138270B4B5100209D24 /* HomeViewModel.swift in Sources */,
+				14306137270B4B5100209D24 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +431,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +461,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
