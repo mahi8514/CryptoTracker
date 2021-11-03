@@ -8,5 +8,15 @@
 import Foundation
 
 struct Constants {
-    static let backgroundRefreshTaskId = "com.cryptotracker.refresh"
+    
+    struct Identifiers {
+        static let backgroundRefreshTaskId = "com.cryptotracker.refresh"
+        static let backgroundURLSessionId = "com.cryptotracker.bg_urlsession"
+    }
+    
+    struct Network {
+        static let baseUrl = "https://api.coindesk.com"
+        static let currentPricePath = "/v1/bpi/currentprice.json"
+    }
+    
 }

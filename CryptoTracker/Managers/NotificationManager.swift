@@ -41,7 +41,21 @@ class NotificationManager {
     
     private init() {  }
     
-    func showLocalNotification(with model: NotificationModel) {
+    func notifyIfNeeded(with bitcoinResponse: BitcoinResponse) {
+        guard let minimumRate = UserDefaultConfig.minimumAcceptableRate, let maximumRate = UserDefaultConfig.maximumAcceptableRate else { return }
+        if let latest = DataManager.shared.latestBitCoin {
+            // Trigger notification only if there is any change. The best constraint is the date & time. But seconds in time is not updated in API
+            if bitcoinResponse.bpi.USD.rateFloat == latest.bpi.USD.rateFloat { return }
+        }
+        let amount = bitcoinResponse.bpi.USD.rateFloat
+        if amount <= minimumRate {
+            showLocalNotification(with: .init(amount: amount, type: .minimum))
+        } else if amount >= maximumRate {
+            showLocalNotification(with: .init(amount: amount, type: .maximum))
+        }
+    }
+    
+    private func showLocalNotification(with model: NotificationModel) {
         let content = UNMutableNotificationContent()
         content.title = model.title
         content.subtitle = model.subtitle

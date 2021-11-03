@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14271DA9273060EA004512F8 /* BGDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14271DA8273060EA004512F8 /* BGDownloadManager.swift */; };
 		1430610C270B4B2200209D24 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */; };
 		14306110270B4B2300209D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1430610F270B4B2300209D24 /* Assets.xcassets */; };
 		14306113270B4B2300209D24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14306112270B4B2300209D24 /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14271DA8273060EA004512F8 /* BGDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGDownloadManager.swift; sourceTree = "<group>"; };
 		14306108270B4B2200209D24 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1430610B270B4B2200209D24 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
 		1430610F270B4B2300209D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				1430614C270B59E300209D24 /* CurrencyManager.swift */,
 				1430615D270B77C000209D24 /* DataManager.swift */,
 				14306154270B60E300209D24 /* NotificationManager.swift */,
+				14271DA8273060EA004512F8 /* BGDownloadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				1430615C270B688500209D24 /* UserDefault.swift in Sources */,
 				1430610C270B4B2200209D24 /* CryptoTrackerApp.swift in Sources */,
 				14306150270B5A7400209D24 /* DatatypeExtension.swift in Sources */,
+				14271DA9273060EA004512F8 /* BGDownloadManager.swift in Sources */,
 				14306159270B640700209D24 /* AppDelegate.swift in Sources */,
 				14306142270B526200209D24 /* Provider.swift in Sources */,
 				14306143270B526200209D24 /* Extensions.swift in Sources */,

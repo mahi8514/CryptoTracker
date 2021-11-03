@@ -40,7 +40,13 @@ final class CryptoProvider: ProviderProtocol {
                 }
             }
             .decode(type: T.self, decoder: jsonDecoder)
-            .mapError { _ in NetworkError.invalidJSON }
+            .mapError { error in
+                switch error {
+                case is Swift.DecodingError: return NetworkError.invalidJSON
+                default: return NetworkError.unknown
+                }
+            }
+            .subscribe(on: RunLoop.main)
             .eraseToAnyPublisher()
             
     }

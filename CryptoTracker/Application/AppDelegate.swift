@@ -17,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         registerForNotification()
         
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.backgroundRefreshTaskId, using: nil) { task in
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.Identifiers.backgroundRefreshTaskId, using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
         }
         
@@ -25,9 +25,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        print("Background task fetch with identifier: \(identifier)")
+        completionHandler()
+    }
+    
     func scheduleAppRefresh() {
-        let request = BGAppRefreshTaskRequest(identifier: Constants.backgroundRefreshTaskId)
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 5)
+        let request = BGAppRefreshTaskRequest(identifier: Constants.Identifiers.backgroundRefreshTaskId)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 60)
         do {
             try BGTaskScheduler.shared.submit(request)
         } catch {
@@ -42,14 +47,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         queue.maxConcurrentOperationCount = 1
         
         let operation = BlockOperation {
-            DefaultBitcoinService().exchangeRate()
-                .sink(receiveValue: { result in
-                    switch result {
-                    case .success(let response): print(response)
-                    case .failure(let error): print(error)
-                    }
-                })
-                .store(in: &self.cancelBag)
+            self.fetchCryptoData()
+            print("BG APP REFRESH")
         }
         
         task.expirationHandler = {
@@ -75,6 +74,23 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         notificationCenter.delegate = self
     }
 }
+
+extension AppDelegate {
+    func fetchCryptoData() {
+        let bgDownloadManager = BGDownloadManager.shared
+        bgDownloadManager.delegate = self
+        bgDownloadManager.fetch()
+    }
+}
+
+extension AppDelegate: BackgroundFetchDelegate {
+    func didFetchCryptoData(bitcoinResponse: BitcoinResponse) {
+        print(bitcoinResponse)
+        NotificationManager.shared.notifyIfNeeded(with: bitcoinResponse)
+        DataManager.shared.latestBitCoin = bitcoinResponse
+    }
+}
+
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

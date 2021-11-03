@@ -24,9 +24,11 @@ class ViewModel: ObservableObject {
 
 class HomeViewModel: ViewModel {
     
+    
+    
     let bitcoinService: BitcoinService
     
-    @Published var exchangeRate: String = "$"
+    @Published var exchangeRate: String = ""
     @Published var minimalAcceptableRate: String = ""
     @Published var maximalAcceptableRate: String = ""
     
@@ -66,7 +68,10 @@ class HomeViewModel: ViewModel {
             .switchToLatest()
             .sink(receiveValue: { [weak self] result in
                 switch result {
-                case .success(let response): self?.exchangeRate = response.bpi.USD.rateFloat.usd
+                case .success(let response):
+                    self?.exchangeRate = response.bpi.USD.rateFloat.usd
+                    NotificationManager.shared.notifyIfNeeded(with: response)
+                    DataManager.shared.latestBitCoin = response
                 case .failure(let error): print(error)
                 }
             })

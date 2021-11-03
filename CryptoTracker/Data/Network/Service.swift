@@ -26,12 +26,12 @@ enum CryptoService {
 extension CryptoService: ServiceProtocol {
 
     var baseURL: URL? {
-        URL(string: "https://api.coindesk.com")
+        URL(string: Constants.Network.baseUrl)
     }
 
     var path: String {
         switch self {
-        case .exchangeRate: return "/v1/bpi/currentprice.json"
+        case .exchangeRate: return Constants.Network.currentPricePath
         }
     }
 
